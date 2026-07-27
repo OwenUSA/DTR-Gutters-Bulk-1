@@ -23,19 +23,11 @@ Bulk landing-page generator for **Dream Team Roofing & Gutters**. Cloned from th
 
 3. **Fill `.env`** (copy from `.env.example` if needed)
    ```
-   DB_HOST=localhost
-   DB_PORT=3306
-   DB_USER=<user>
-   DB_PASSWORD=<password exactly as the host shows it>
-   DB_NAME=<dbname>
+   DATABASE_URL=mysql://<user>:<password>@<host>:3306/<dbname>
    SESSION_SECRET=<32+ char random string>
-   SITE_URL=https://your-domain.com
+   SITE_URL=https://dreamteamguttersfl.com
    SITE_NAME=Dream Team Roofing & Gutters
    ```
-   Prefer the discrete `DB_*` variables. They are handed to the driver as
-   fields, so a password containing `>`, `#`, `@` or `&` needs no escaping.
-   `DATABASE_URL` still works when no `DB_*` vars are set, but it is parsed as a
-   URI, so those characters must be percent-encoded (`>` = `%3E`, `#` = `%23`).
    A pre-generated `SESSION_SECRET` is already written to `.env`. Replace it for production if you want.
 
 4. **Generate migrations and push schema**
