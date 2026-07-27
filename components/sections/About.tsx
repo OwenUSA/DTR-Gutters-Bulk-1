@@ -1,6 +1,6 @@
 type AboutProps = { name: string; isHome: boolean };
 
-const ABOUT_IMG = "/assets/placeholder.svg";
+const ABOUT_IMG = "/assets/about-crew.jpg";
 
 function AboutCopy({ name, isHome }: AboutProps) {
   return (

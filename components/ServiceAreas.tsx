@@ -2,7 +2,7 @@ import { db } from "@/db/client";
 import { locations } from "@/db/schema";
 import { asc, eq } from "drizzle-orm";
 
-const SERVICE_AREA_IMG = "/assets/placeholder.svg";
+const SERVICE_AREA_IMG = "/assets/service-area.jpg";
 
 /**
  * Home renders the full linked directory — this is the crawler's entry point to

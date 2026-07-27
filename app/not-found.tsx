@@ -7,8 +7,8 @@ export default function NotFound() {
     <main className="min-h-screen bg-offwhite flex items-center justify-center p-6">
       <div className="container-x max-w-xl text-center">
         <img
-          src="/assets/cropped-New-Logo-scaled-1.png"
-          alt="Dream Team Roofing &amp; Gutters"
+          src="/assets/dream-team-gutters-logo.jpg"
+          alt="Dream Team Gutters"
           className="h-[70px] w-auto mx-auto mb-8"
         />
         <p className="text-gold font-bold tracking-[2px] text-[0.85rem] uppercase mb-3">

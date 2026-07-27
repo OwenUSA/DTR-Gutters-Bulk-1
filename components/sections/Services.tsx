@@ -1,27 +1,27 @@
 const SERVICES = [
   {
     title: "Seamless Gutter Installation",
-    img: "/assets/placeholder.svg",
+    img: "/assets/service-seamless-installation.jpg",
     body: "Custom-cut on-site from one continuous coil of aluminum, copper, or steel. Fewer joints, fewer leaks, and a cleaner line along your roof.",
   },
   {
     title: "Gutter Guards & Leaf Protection",
-    img: "/assets/placeholder.svg",
+    img: "/assets/service-gutter-guards.jpg",
     body: "Micro-mesh, screen, and reverse-curve guards that keep leaves, pine needles, and shingle grit out while letting heavy Florida rain flow through.",
   },
   {
     title: "Gutter Cleaning",
-    img: "/assets/placeholder.svg",
+    img: "/assets/service-gutter-cleaning.jpg",
     body: "Full debris removal, downspout flushing, and a flow test on every run. We bag the debris and leave the roofline spotless.",
   },
   {
     title: "Gutter Repair",
-    img: "/assets/placeholder.svg",
+    img: "/assets/service-gutter-repair.jpg",
     body: "Re-pitching sagging runs, swapping pulled fasteners for hidden hangers, sealing seams, and patching pinhole leaks before they rot the fascia.",
   },
   {
     title: "Downspout Installation & Repair",
-    img: "/assets/placeholder.svg",
+    img: "/assets/service-downspouts.jpg",
     body: "New downspouts, extensions, splash blocks, and underground drainage tie-ins that move water well away from your foundation.",
   },
   {

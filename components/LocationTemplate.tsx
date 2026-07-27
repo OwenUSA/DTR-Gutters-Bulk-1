@@ -11,11 +11,11 @@ import { AboutImageLeft, AboutImageRight, AboutStacked } from "@/components/sect
 import { ProcessCards, ProcessTimeline, ProcessStepper } from "@/components/sections/Process";
 import { WhyGrid, WhyStacked, WhyIconLed } from "@/components/sections/Why";
 
-// Until real photography is supplied, every imagery slot uses a single
-// branded SVG placeholder. Drop real files into /public/assets and update
-// these constants (or the per-service paths in components/sections/Services.tsx).
-const DEFAULT_HERO = "/assets/placeholder.svg";
-const FINANCING_IMG = "/assets/placeholder.svg";
+// Real imagery lives in /public/assets. Two service tiles (Fascia & Soffit,
+// Copper & Specialty) are still on the placeholder SVG — see
+// components/sections/Services.tsx.
+const DEFAULT_HERO = "/assets/hero-gutters.jpg";
+const FINANCING_IMG = "/assets/financing.jpg";
 // The service-area image now lives in components/ServiceAreas.tsx.
 
 // Keep slug-hashed accent system; gutters site shifts the base hue to a
@@ -124,7 +124,7 @@ export default function LocationTemplate({
       <header className="bg-white shadow-[0_2px_8px_rgba(0,0,0,0.08)] sticky top-0 z-[100]">
         <div className="container-x flex items-center justify-between py-3">
           <a href="#" className="block">
-            <img src="/assets/cropped-New-Logo-scaled-1.png" alt="Dream Team Roofing & Gutters" className="h-[60px] w-auto" />
+            <img src="/assets/dream-team-gutters-logo.jpg" alt="Dream Team Gutters" className="h-[60px] w-auto" />
           </a>
           <SiteNav isHome={isHome} />
           <a href="#quote" className="btn btn-primary">GET STARTED</a>
@@ -270,7 +270,7 @@ export default function LocationTemplate({
       <footer className="bg-navy-dark text-[#cfd8e3] pt-[60px]">
         <div className="container-x grid md:grid-cols-[1.2fr_1fr_1fr_1.5fr] gap-10">
           <div>
-            <img src="/assets/cropped-New-Logo-scaled-1.png" alt="Dream Team Roofing & Gutters" className="h-[70px] w-auto bg-white p-2 rounded-md mb-4" />
+            <img src="/assets/dream-team-gutters-logo.jpg" alt="Dream Team Gutters" className="h-[70px] w-auto bg-white p-2 rounded-md mb-4" />
             <p className="text-[0.92rem] mb-2.5">South Florida&apos;s trusted gutter experts. Licensed, insured, and family-owned.</p>
             <p className="text-[0.92rem] mb-2.5"><strong>License #:</strong> {license}</p>
             {email && <p className="text-[0.92rem] mb-2.5"><strong>Email:</strong> <a href={emailHref} className="text-gold font-semibold">{email}</a></p>}

@@ -71,7 +71,7 @@ export default async function LocationPage({ params }: { params: { slug: string 
       : undefined,
     areaServed: loc.name,
     priceRange: "$$",
-    image: `${SITE_URL}/assets/hero-default.jpg`,
+    image: `${SITE_URL}/assets/hero-gutters.jpg`,
   };
 
   return (
