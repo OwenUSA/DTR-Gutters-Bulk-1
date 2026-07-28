@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Yelp">
+  <!-- Yelp burst mark. Each ray is drawn as a round-capped stroke, which gives
+       the mark's characteristic rounded, tapered blades without hand-tuned
+       outline paths. -->
+  <g stroke="#D32323" stroke-linecap="round" fill="none">
+    <path d="M38.1 11.8 L53.8 55.1" stroke-width="22" />
+    <path d="M38 110.1 L51 87.6" stroke-width="22" />
+    <path d="M98.3 39.9 L73.8 60.4" stroke-width="20" />
+    <path d="M110 72 L78 72" stroke-width="20" />
+    <path d="M93.9 105.9 L72.7 84.7" stroke-width="20" />
+  </g>
+</svg>

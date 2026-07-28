@@ -40,7 +40,7 @@ function HeroCopy({ heroH1, heroSub }: { heroH1: string; heroSub: string }) {
       <div className="flex gap-5 mt-[30px] flex-wrap">
         <span className="bg-white/15 px-4 py-2 rounded-[20px] text-[0.9rem] font-medium">★ 5.0 Google</span>
         <span className="bg-white/15 px-4 py-2 rounded-[20px] text-[0.9rem] font-medium">★ 5.0 Facebook</span>
-        <span className="bg-white/15 px-4 py-2 rounded-[20px] text-[0.9rem] font-medium">A+ BBB Rating</span>
+        <span className="bg-white/15 px-4 py-2 rounded-[20px] text-[0.9rem] font-medium">★ 5.0 Yelp</span>
       </div>
     </>
   );

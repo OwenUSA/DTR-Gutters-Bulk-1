@@ -146,8 +146,8 @@ export default function LocationTemplate({
             <div><strong className="text-[1.5rem] text-navy block">5.0</strong><span className="text-[0.85rem] text-[#666]">Facebook Reviews</span></div>
           </div>
           <div className="flex items-center gap-3">
-            <img src="/assets/images-2.png" alt="BBB" className="w-10 h-10 object-contain" />
-            <div><strong className="text-[1.5rem] text-navy block">A+</strong><span className="text-[0.85rem] text-[#666]">BBB Rating</span></div>
+            <img src="/assets/yelp-logo.svg" alt="Yelp" className="w-10 h-10 object-contain" />
+            <div><strong className="text-[1.5rem] text-navy block">5.0</strong><span className="text-[0.85rem] text-[#666]">Yelp Reviews</span></div>
           </div>
         </div>
       </section>
