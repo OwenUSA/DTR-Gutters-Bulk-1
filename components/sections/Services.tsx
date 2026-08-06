@@ -26,12 +26,12 @@ const SERVICES = [
   },
   {
     title: "Fascia & Soffit Repair",
-    img: "/assets/placeholder.svg",
+    img: "/assets/service-fascia-soffit.jpg",
     body: "When gutters fail, the wood behind them usually pays the price. We replace rotted fascia and soffit boards before re-hanging.",
   },
   {
     title: "Copper & Specialty Gutters",
-    img: "/assets/placeholder.svg",
+    img: "/assets/service-copper-specialty.jpg",
     body: "Premium copper, half-round profiles, and custom finishes for historic homes and high-end builds where the gutter is part of the design.",
   },
 ];

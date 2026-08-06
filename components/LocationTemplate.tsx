@@ -11,9 +11,7 @@ import { AboutImageLeft, AboutImageRight, AboutStacked } from "@/components/sect
 import { ProcessCards, ProcessTimeline, ProcessStepper } from "@/components/sections/Process";
 import { WhyGrid, WhyStacked, WhyIconLed } from "@/components/sections/Why";
 
-// Real imagery lives in /public/assets. Two service tiles (Fascia & Soffit,
-// Copper & Specialty) are still on the placeholder SVG — see
-// components/sections/Services.tsx.
+// Real imagery lives in /public/assets — every service tile now has a photo.
 const DEFAULT_HERO = "/assets/hero-gutters.jpg";
 const FINANCING_IMG = "/assets/financing.jpg";
 // The service-area image now lives in components/ServiceAreas.tsx.
