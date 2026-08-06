@@ -37,8 +37,15 @@ const PROCESS_VARIANTS: ProcessVariant[] = ["cards", "timeline", "stepper"];
 const WHY_VARIANTS: WhyVariant[] = ["grid", "stacked", "iconLed"];
 const CANONICAL_ORDER: SectionKey[] = ["services", "about", "process", "why"];
 
+// The sub-seeds below are XORed against constants with the high bit set, and
+// JS bitwise ops yield signed int32 — so those seeds are always negative.
+// A plain `%` would then index out of range and hand back `undefined`.
+function mod(n: number, m: number): number {
+  return ((n % m) + m) % m;
+}
+
 function pickFrom<T>(arr: readonly T[], seed: number): T {
-  return arr[seed % arr.length];
+  return arr[mod(seed, arr.length)];
 }
 
 // Deterministic shuffle: returns first `n` indices of a stable Fisher-Yates
@@ -61,7 +68,7 @@ function pickNIndices(poolSize: number, n: number, seed: number): number[] {
 function shuffleSectionOrder(seed: number): SectionKey[] {
   const order = [...CANONICAL_ORDER];
   // Swap one adjacent pair deterministically — gentle reorder, layout stays sensible.
-  const i = seed % (order.length - 1);
+  const i = mod(seed, order.length - 1);
   [order[i], order[i + 1]] = [order[i + 1], order[i]];
   return order;
 }
