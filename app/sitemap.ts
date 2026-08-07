@@ -5,6 +5,10 @@ import { eq } from "drizzle-orm";
 
 const SITE_URL = process.env.SITE_URL || "https://dreamteamguttersfl.com";
 
+// Built at deploy time by default, which silently omits every location added
+// since. Generate per request so newly published pages are crawlable at once.
+export const dynamic = "force-dynamic";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const rows = await db
     .select()

@@ -5,6 +5,11 @@ import LocationTemplate from "@/components/LocationTemplate";
 const SITE_URL = process.env.SITE_URL || "https://dreamteamguttersfl.com";
 const SITE_NAME = process.env.SITE_NAME || "Dream Team Roofing & Gutters";
 
+// The nav and the service-area directory both read the locations table, so a
+// build-time snapshot goes stale the moment a location is added. Render per
+// request instead — new pages then appear here without a redeploy.
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: `${SITE_NAME} — Florida's Trusted Gutter Experts`,
   description: `${SITE_NAME} delivers seamless gutters, leaf protection, repair, and cleaning across South Florida.`,

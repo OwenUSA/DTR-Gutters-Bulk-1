@@ -6,6 +6,7 @@ import { eq } from "drizzle-orm";
 import LocationTemplate from "@/components/LocationTemplate";
 import { autoMetaTitle, autoMetaDescription } from "@/lib/seo";
 import { isValidSlug } from "@/lib/slug";
+import { cityFromName } from "@/lib/city";
 
 const SITE_URL = process.env.SITE_URL || "https://dreamteamguttersfl.com";
 const SITE_NAME = process.env.SITE_NAME || "Dream Team Roofing & Gutters";
@@ -53,6 +54,8 @@ export default async function LocationPage({ params }: { params: { slug: string 
   const loc = await getLocation(params.slug);
   if (!loc) notFound();
 
+  const city = cityFromName(loc.name);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
@@ -64,12 +67,13 @@ export default async function LocationPage({ params }: { params: { slug: string 
       ? {
           "@type": "PostalAddress",
           streetAddress: loc.address,
+          addressLocality: city || undefined,
           postalCode: loc.zip || undefined,
           addressRegion: "FL",
           addressCountry: "US",
         }
       : undefined,
-    areaServed: loc.name,
+    areaServed: city,
     priceRange: "$$",
     image: `${SITE_URL}/assets/hero-gutters.jpg`,
   };

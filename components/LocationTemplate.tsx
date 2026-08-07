@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import type { Location } from "@/db/schema";
 import { getThemeForSlug } from "@/lib/theme";
+import { cityFromName } from "@/lib/city";
 import { getVariantsForSlug, type SectionKey } from "@/lib/variants";
 import { REVIEW_POOL } from "@/lib/reviewPool";
 import SiteNav from "@/components/SiteNav";
@@ -55,7 +56,9 @@ export default function LocationTemplate({
   const emailHref = email ? `mailto:${email}` : "";
   // TODO: confirm license number for the gutters business — using a placeholder.
   const license = loc.license || "CCC1334317";
-  const name = loc.name;
+  // Sections below address the reader's town, so they take the bare city —
+  // `loc.name` is a service label ("Gutter Services - Wellington, FL").
+  const city = cityFromName(loc.name);
 
   const theme = isHome ? ORIGINAL_THEME : getThemeForSlug(loc.slug);
   const themeStyle = {
@@ -79,9 +82,9 @@ export default function LocationTemplate({
       v.services === "list" ? <ServicesList /> :
       <ServicesAlternating />,
     about:
-      v.about === "imageLeft" ? <AboutImageLeft name={name} isHome={isHome} /> :
-      v.about === "imageRight" ? <AboutImageRight name={name} isHome={isHome} /> :
-      <AboutStacked name={name} isHome={isHome} />,
+      v.about === "imageLeft" ? <AboutImageLeft name={city} isHome={isHome} /> :
+      v.about === "imageRight" ? <AboutImageRight name={city} isHome={isHome} /> :
+      <AboutStacked name={city} isHome={isHome} />,
     process:
       v.process === "cards" ? <ProcessCards /> :
       v.process === "timeline" ? <ProcessTimeline /> :
@@ -197,7 +200,7 @@ export default function LocationTemplate({
       {loc.address && (
         <section className="py-20 bg-offwhite">
           <div className="container-x">
-            <h2 className="section-title">Find Us in {name}</h2>
+            <h2 className="section-title">Find Us in {city}</h2>
             <div className="rounded-[10px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.1)] w-full h-[400px]">
               <iframe
                 src={`https://www.google.com/maps?q=${encodeURIComponent(`${loc.address}${loc.zip ? ` ${loc.zip}` : ""}`)}&output=embed`}
@@ -205,7 +208,7 @@ export default function LocationTemplate({
                 height="100%"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title={`${name} location map`}
+                title={`${city} location map`}
                 className="border-0 w-full h-full"
               />
             </div>
@@ -226,7 +229,7 @@ export default function LocationTemplate({
       </section>
 
       {/* Service area — home lists every location; inner pages link to /locations */}
-      <ServiceAreas isHome={isHome} name={name} />
+      <ServiceAreas isHome={isHome} name={city} />
 
       {/* FAQ */}
       <section className="py-20 bg-offwhite" id="faq">
@@ -296,7 +299,7 @@ export default function LocationTemplate({
           <div>
             <h4 className="text-white mb-4 text-[1.1rem]">Our Office</h4>
             <ul>
-              <li className="text-[0.95rem] leading-[1.6]"><strong className="text-white">{name}</strong></li>
+              <li className="text-[0.95rem] leading-[1.6]"><strong className="text-white">{loc.name}</strong></li>
               {loc.address && <li className="text-[0.9rem] leading-[1.6]">{loc.address}{loc.zip ? `, ${loc.zip}` : ""}</li>}
               {loc.phone && <li className="text-[0.9rem] leading-[1.6]">📞 <a href={phoneHref} className="text-gold">{loc.phone}</a></li>}
               {loc.email && <li className="text-[0.9rem] leading-[1.6]">✉ <a href={emailHref} className="text-gold">{loc.email}</a></li>}

@@ -6,6 +6,9 @@ import { asc, eq } from "drizzle-orm";
 
 const SITE_NAME = process.env.SITE_NAME || "Dream Team Roofing & Gutters";
 
+// Directory of every published location — must reflect the table, not the build.
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: `Our Locations | ${SITE_NAME}`,
   description: `Find a ${SITE_NAME} office near you. Licensed, insured gutter experts serving South Florida.`,
